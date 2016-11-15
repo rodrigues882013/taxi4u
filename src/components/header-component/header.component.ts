@@ -1,16 +1,16 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
 import { TranslateService } from 'ng2-translate';
 
+
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
+  selector: 'header-component',
+  templateUrl: 'header.component.html'
 })
 
-export class HomePage {
+export class HeaderComponent {
 
-  constructor(public navCtrl: NavController, translate: TranslateService) {
-    HomePage.startLanguage(translate)
+  constructor(translate: TranslateService) {
+    HeaderComponent.startLanguage(translate);
   }
 
   static startLanguage(translate){

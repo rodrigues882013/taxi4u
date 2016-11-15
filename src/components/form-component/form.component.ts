@@ -1,16 +1,19 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
 import { TranslateService } from 'ng2-translate';
 
+
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
+  selector: 'form-component',
+  templateUrl: 'form.component.html'
 })
+export class FormComponent {
 
-export class HomePage {
+  protected name: string;
+  protected celphone: string;
+  protected localization: string;
 
-  constructor(public navCtrl: NavController, translate: TranslateService) {
-    HomePage.startLanguage(translate)
+  constructor(translate: TranslateService) {
+    FormComponent.startLanguage(translate);
   }
 
   static startLanguage(translate){

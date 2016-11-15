@@ -1,16 +1,15 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
 import { TranslateService } from 'ng2-translate';
 
+
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
+  selector: 'content-component',
+  templateUrl: 'content.component.html'
 })
+export class ContentComponent {
 
-export class HomePage {
-
-  constructor(public navCtrl: NavController, translate: TranslateService) {
-    HomePage.startLanguage(translate)
+  constructor(translate: TranslateService) {
+    ContentComponent.startLanguage(translate);
   }
 
   static startLanguage(translate){
@@ -19,5 +18,6 @@ export class HomePage {
     let browserLang = translate.getBrowserLang();
     translate.use(browserLang.match(/en|pt/) ? browserLang : 'pt');
   }
+
 
 }

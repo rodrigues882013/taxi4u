@@ -1,16 +1,17 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
 import { TranslateService } from 'ng2-translate';
 
+
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
+  selector: 'login-form-component',
+  templateUrl: 'login-form.component.html'
 })
+export class LoginFormComponent {
 
-export class HomePage {
+  text: string;
 
-  constructor(public navCtrl: NavController, translate: TranslateService) {
-    HomePage.startLanguage(translate)
+  constructor(translate: TranslateService) {
+    LoginFormComponent.startLanguage(translate)
   }
 
   static startLanguage(translate){
@@ -18,6 +19,10 @@ export class HomePage {
     translate.setDefaultLang('pt');
     let browserLang = translate.getBrowserLang();
     translate.use(browserLang.match(/en|pt/) ? browserLang : 'pt');
+  }
+
+  onLogin(){
+
   }
 
 }

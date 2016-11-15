@@ -1,6 +1,18 @@
 {
   "HOME": {
     "TITLE": "Carlos Taxi",
-    "WELCOME": "Welcome"
-  }
+    "WELCOME": "Welcome",
+    "NAME": "Name",
+    "CELPHONE": "Celphone",
+    "OBSERVATIONS": "Observations",
+    "USERNAME": "Username",
+    "PASSWORD": "Password",
+    "CONFIRM_PASSWORD": "Confirma your password"
+  },
+  "LOGIN": {
+    "SIGN": "Sign"
+  },
+  "APP_NAME": "Carlos Taxi",
+  "MENU": "menu",
+  "REGISTER": "Register"
 }

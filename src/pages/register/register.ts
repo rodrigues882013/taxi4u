@@ -2,15 +2,16 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { TranslateService } from 'ng2-translate';
 
+
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
+  selector: 'page-register',
+  templateUrl: 'register.html'
 })
 
-export class HomePage {
+export class RegisterPage {
 
   constructor(public navCtrl: NavController, translate: TranslateService) {
-    HomePage.startLanguage(translate)
+    RegisterPage.startLanguage(translate);
   }
 
   static startLanguage(translate){
@@ -18,6 +19,10 @@ export class HomePage {
     translate.setDefaultLang('pt');
     let browserLang = translate.getBrowserLang();
     translate.use(browserLang.match(/en|pt/) ? browserLang : 'pt');
+  }
+
+  ionViewDidLoad() {
+    console.log('Hello RegisterPage Page');
   }
 
 }
