@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TranslateService } from 'ng2-translate';
+import { AuthService } from '../../providers/auth-service';
 
 
 @Component({
@@ -8,9 +9,7 @@ import { TranslateService } from 'ng2-translate';
 })
 export class LoginFormComponent {
 
-  text: string;
-
-  constructor(translate: TranslateService) {
+  constructor(translate: TranslateService, private authService: AuthService) {
     LoginFormComponent.startLanguage(translate)
   }
 
@@ -22,7 +21,8 @@ export class LoginFormComponent {
   }
 
   onLogin(){
-
+    console.log("Login")
+    this.authService.login("Ola", "Teste");
   }
 
 }

@@ -15,8 +15,8 @@ import { RegisterPage } from '../pages/register/register';
 
 export class MyApp implements OnInit {
   @ViewChild(Nav) nav: Nav;
-  protected rootPage: any = LoginPage;
-  protected pages: Array<{title: string, component: any}>;
+  rootPage: any = LoginPage;
+  pages: Array<{title: string, component: any}>;
 
   constructor(protected platform: Platform,
               protected menu: MenuController,

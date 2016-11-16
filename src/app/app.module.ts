@@ -1,4 +1,6 @@
+
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+import { HttpModule, Http } from '@angular/http';
 import { IonicApp, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
@@ -11,9 +13,11 @@ import { LoginFormComponent } from "../components/login-form-component/login-for
 import { HeaderComponent } from "../components/header-component/header.component";
 import { ContentComponent } from "../components/content-component/content.component";
 
+import { AuthService } from "../providers/auth-service";
+import { StringService } from "../providers/string-service";
 
-import { HttpModule, Http } from '@angular/http';
 import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate';
+
 
 export function createTranslateLoader(http: Http) {
   return new TranslateStaticLoader(http, './assets/i18n', '.json');
@@ -40,13 +44,13 @@ export function createTranslateLoader(http: Http) {
     })
   ],
   bootstrap: [IonicApp],
-  schemas: [ NO_ERRORS_SCHEMA ], 
+  schemas: [ NO_ERRORS_SCHEMA ],
   entryComponents: [
     MyApp,
     HomePage,
     RegisterPage,
     LoginPage
   ],
-  providers: []
+  providers: [ AuthService, StringService ]
 })
 export class AppModule {}
