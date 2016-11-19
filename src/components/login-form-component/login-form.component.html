@@ -5,12 +5,12 @@
       <ion-list>
         <ion-item>
           <ion-label floating>{{ 'HOME.USERNAME' | translate }}</ion-label>
-          <ion-input type="text" value=""></ion-input>
+          <ion-input type="text" value="" [(ngModel)]="username"></ion-input>
         </ion-item>
 
         <ion-item>
           <ion-label floating>{{ 'HOME.PASSWORD' | translate }}</ion-label>
-          <ion-input type="password" value=""></ion-input>
+          <ion-input type="password" value="" [(ngModel)]="password"></ion-input>
         </ion-item>
       </ion-list>
     </ion-col>

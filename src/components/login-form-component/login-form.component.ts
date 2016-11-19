@@ -1,16 +1,30 @@
-import { Component } from '@angular/core';
+import { Component, Output, Input, EventEmitter, OnInit } from '@angular/core';
 import { TranslateService } from 'ng2-translate';
 import { AuthService } from '../../providers/auth-service';
+
 
 
 @Component({
   selector: 'login-form-component',
   templateUrl: 'login-form.component.html'
 })
-export class LoginFormComponent {
 
-  constructor(translate: TranslateService, private authService: AuthService) {
+export class LoginFormComponent implements OnInit {
+
+  private username: string;
+  private password: string;
+  @Input()  status = false;
+  @Output() loggedIn = new EventEmitter();
+
+
+  constructor(public translate: TranslateService, public authService: AuthService) {
     LoginFormComponent.startLanguage(translate)
+  }
+
+  ngOnInit() {
+    AuthService.userLogged.subscribe(
+      status => this.changeStatus(status)
+    );
   }
 
   static startLanguage(translate){
@@ -20,9 +34,15 @@ export class LoginFormComponent {
     translate.use(browserLang.match(/en|pt/) ? browserLang : 'pt');
   }
 
+  changeStatus(newStatus){
+    console.log(newStatus)
+    this.status = newStatus;
+    this.loggedIn.emit({ value: this.status })
+  }
+
   onLogin(){
-    console.log("Login")
-    this.authService.login("Ola", "Teste");
+    console.log("loging user");
+    this.authService.login(this.username, this.password)
   }
 
 }

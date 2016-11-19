@@ -1,6 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { App, NavController, ViewController } from 'ionic-angular';
 import { TranslateService } from 'ng2-translate';
+import { AuthService } from '../../providers/auth-service';
+
+import { HomePage } from '../home/home';
+
 
 
 @Component({
@@ -10,7 +14,13 @@ import { TranslateService } from 'ng2-translate';
 
 export class LoginPage {
 
-  constructor(public navCtrl: NavController, translate: TranslateService) {
+  public status: boolean = false;
+
+  constructor(public navCtrl: NavController,
+              public appCtrl: App,
+              public authService: AuthService,
+              public viewCtrl: ViewController,
+              translate: TranslateService) {
     LoginPage.startLanguage(translate)
   }
 
@@ -22,7 +32,16 @@ export class LoginPage {
   }
 
   ngOnInit(){
+    if (this.authService.isLogged()) this.changePage();
+  }
 
+  changePage(){
+    this.viewCtrl.dismiss();
+    this.appCtrl.getRootNav().push(HomePage);
+  }
+
+  userAuthenticated(event){
+    if (event.value) this.changePage();
   }
 
   ionViewDidLoad() {

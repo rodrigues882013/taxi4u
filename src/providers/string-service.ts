@@ -10,7 +10,7 @@ export class StringService {
   constructor(private http: Http) { }
 
   getString(){
-    return this.http.get('./providers/strings.json')
+    return this.http.get('./assets/constants/strings.json')
                     .map( res => res.json())
   }
 

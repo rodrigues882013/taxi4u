@@ -1,4 +1,4 @@
 <header-component></header-component>
 <content-component>
-  <login-form-component></login-form-component>
+  <login-form-component [status]="status" (loggedIn)="userAuthenticated($event);"></login-form-component>
 </content-component>
