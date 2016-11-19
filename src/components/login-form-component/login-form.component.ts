@@ -11,8 +11,8 @@ import { AuthService } from '../../providers/auth-service';
 
 export class LoginFormComponent implements OnInit {
 
-  private username: string;
-  private password: string;
+  public username: string;
+  public password: string;
   @Input()  status = false;
   @Output() loggedIn = new EventEmitter();
 
