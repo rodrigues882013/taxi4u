@@ -1,6 +1,6 @@
 import { Component, Output, Input, EventEmitter, OnInit } from '@angular/core';
 import { TranslateService } from 'ng2-translate';
-import { AuthService } from '../../providers/auth-service';
+import { AuthService } from '../../providers/auth.service';
 
 
 

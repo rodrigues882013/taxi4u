@@ -1,4 +1,4 @@
 <header-component></header-component>
 <content-component>
-  <map-component></map-component>
+  <map-component (position)="position" (positionCatched)="registerPosition($event);"></map-component>
 </content-component>

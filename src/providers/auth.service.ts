@@ -1,7 +1,7 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import { Http, Response, Headers, RequestOptions  } from '@angular/http';
 
-import { StringService } from "./string-service";
+import { StringService } from "./string.service";
 
 import { AuthHttp } from 'angular2-jwt/angular2-jwt';
 import { Observable } from 'rxjs/Rx';

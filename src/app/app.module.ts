@@ -21,8 +21,9 @@ import { ContentComponent } from "../components/content-component/content.compon
 import { MapComponent } from "../components/map-component/map.component";
 
 // Services
-import { AuthService } from "../providers/auth-service";
-import { StringService } from "../providers/string-service";
+import { AuthService } from "../providers/auth.service";
+import { StringService } from "../providers/string.service";
+import { LocationService } from "../providers/location.service";
 
 //External dependecies
 import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate';
@@ -85,7 +86,8 @@ export function createTranslateLoader(http: Http) {
       provide: AuthHttp,
       useFactory: getAuthHttp,
       deps: [Http]
-    }
+    },
+    LocationService
   ]
 })
 export class AppModule {}

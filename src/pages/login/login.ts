@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { App, NavController, ViewController } from 'ionic-angular';
 import { TranslateService } from 'ng2-translate';
-import { AuthService } from '../../providers/auth-service';
+import { AuthService } from '../../providers/auth.service';
 
 import { HomePage } from '../home/home';
 

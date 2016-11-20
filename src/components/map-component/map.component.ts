@@ -1,4 +1,13 @@
-import { Component, OnInit, ViewChild, ElementRef  } from '@angular/core';
+import { Component,
+         OnInit,
+         ViewChild,
+         ElementRef,
+         EventEmitter,
+         Input,
+         Output } from '@angular/core';
+import { Geolocation, Geoposition } from 'ionic-native';
+import { LocationService } from '../../providers/location.service';
+
 
 declare var google;
 
@@ -8,20 +17,29 @@ declare var google;
 })
 export class MapComponent implements OnInit {
 
-  private map: any;
+  // Method declaration
   @ViewChild('map') mapElement: ElementRef;
+  private map: any;
+  @Input()  position: [number, number];
+  @Output() positionCatched = new EventEmitter();
 
-  constructor() {
+
+  constructor(private locationService: LocationService) {
     console.log('Hello MapComponent Component');
-
   }
 
   ngOnInit(){
-    this.loadMap();
+    LocationService.positionChange.subscribe(
+      position => {
+        this.loadMap(position[0], position[1])
+        this.setPosition([position[0], position[1]]);
+      }
+    )
+
   }
 
-  loadMap(){
-    let latLng = new google.maps.LatLng(-34.9290, 138.6010);
+  loadMap(lat: number, long: number){
+    let latLng = new google.maps.LatLng(lat, long);
 
     let mapOptions = {
       center: latLng,
@@ -30,6 +48,32 @@ export class MapComponent implements OnInit {
     }
 
     this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
+
+    // create new marker
+    let marker = new google.maps.Marker({
+      map: this.map,
+      animation: google.maps.Animation.DROP,
+      position: this.map.getCenter()
+    });
+
+    this.addInfoWindow(marker, "<h4>You are here</h4>");
+  }
+
+  addInfoWindow(marker, content){
+
+    let infoWindow = new google.maps.InfoWindow({
+      content: content
+    });
+
+    google.maps.event.addListener(marker, 'click', () => {
+      infoWindow.open(this.map, marker);
+    });
+
+  }
+
+  setPosition(pos: [number, number]){
+    this.position = pos;
+    this.positionCatched.emit({value: pos});
   }
 
 }

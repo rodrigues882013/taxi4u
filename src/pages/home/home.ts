@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { TranslateService } from 'ng2-translate';
-import { AuthService } from '../../providers/auth-service';
+import { AuthService } from '../../providers/auth.service';
 
 
 @Component({
@@ -10,6 +10,8 @@ import { AuthService } from '../../providers/auth-service';
 })
 
 export class HomePage implements OnInit {
+
+  public position: [number, number];
 
   constructor(public navCtrl: NavController,
               public authService: AuthService,
@@ -29,4 +31,11 @@ export class HomePage implements OnInit {
     translate.use(browserLang.match(/en|pt/) ? browserLang : 'pt');
   }
 
+  registerPosition(event){
+    if (event.value) this.setPosition(event.value);
+  }
+
+  setPosition(pos: [number, number]){
+    this.position = pos;
+  }
 }
