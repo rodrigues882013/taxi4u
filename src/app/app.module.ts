@@ -18,6 +18,7 @@ import { FormComponent } from "../components/form-component/form.component";
 import { LoginFormComponent } from "../components/login-form-component/login-form.component";
 import { HeaderComponent } from "../components/header-component/header.component";
 import { ContentComponent } from "../components/content-component/content.component";
+import { MapComponent } from "../components/map-component/map.component";
 
 // Services
 import { AuthService } from "../providers/auth-service";
@@ -56,7 +57,8 @@ export function createTranslateLoader(http: Http) {
     FormComponent,
     LoginFormComponent,
     HeaderComponent,
-    ContentComponent
+    ContentComponent,
+    MapComponent
   ],
   imports: [
     IonicModule.forRoot(MyApp),
