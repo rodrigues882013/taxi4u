@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, App, ViewController } from 'ionic-angular';
 import { TranslateService } from 'ng2-translate';
 import { AuthService } from '../../providers/auth.service';
+
+import { EditPositionPage } from '../edit-position/edit-position';
+
+
 
 
 @Component({
@@ -12,10 +16,13 @@ import { AuthService } from '../../providers/auth.service';
 export class HomePage implements OnInit {
 
   public position: [number, number];
+  public fixed: boolean;
 
   constructor(public navCtrl: NavController,
               public authService: AuthService,
-              translate: TranslateService) {
+              translate: TranslateService,
+              public appCtrl: App,
+              public viewCtrl: ViewController) {
     HomePage.startLanguage(translate)
   }
 
@@ -37,5 +44,14 @@ export class HomePage implements OnInit {
 
   setPosition(pos: [number, number]){
     this.position = pos;
+  }
+
+  fixedPosition(event){
+    if (!event.value) {
+      this.viewCtrl.dismiss();
+      this.appCtrl.getRootNav().push(EditPositionPage);
+    } else {
+      
+    }
   }
 }

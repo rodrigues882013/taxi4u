@@ -12,6 +12,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
+import { EditPositionPage } from '../pages/edit-position/edit-position';
 
 //Components
 import { FormComponent } from "../components/form-component/form.component";
@@ -19,6 +20,7 @@ import { LoginFormComponent } from "../components/login-form-component/login-for
 import { HeaderComponent } from "../components/header-component/header.component";
 import { ContentComponent } from "../components/content-component/content.component";
 import { MapComponent } from "../components/map-component/map.component";
+import { ActionButtonsComponent } from "../components/action-buttons-component/action-buttons.component";
 
 // Services
 import { AuthService } from "../providers/auth.service";
@@ -55,11 +57,13 @@ export function createTranslateLoader(http: Http) {
     HomePage,
     LoginPage,
     RegisterPage,
+    EditPositionPage,
     FormComponent,
     LoginFormComponent,
     HeaderComponent,
     ContentComponent,
-    MapComponent
+    MapComponent,
+    ActionButtonsComponent
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -77,7 +81,8 @@ export function createTranslateLoader(http: Http) {
     MyApp,
     HomePage,
     RegisterPage,
-    LoginPage
+    LoginPage,
+    EditPositionPage
   ],
   providers: [
     AuthService,

@@ -1,4 +1,6 @@
 <header-component></header-component>
 <content-component>
   <map-component (position)="position" (positionCatched)="registerPosition($event);"></map-component>
+  <action-buttons-component (fixed)="fixed" (fixedPosition)="fixedPosition($event)"></action-buttons-component>
 </content-component>
+

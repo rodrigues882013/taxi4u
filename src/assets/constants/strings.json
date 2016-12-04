@@ -1,3 +1,5 @@
 {
-  "API_BASE": "http://192.168.1.22:5000"
+  "API_BASE": "http://192.168.1.22:5000",
+  "MAP_QUEST_API_BASE": "http://www.mapquestapi.com/geocoding/v1/reverse",
+  "MAP_QUEST_API_KEY": "Siu1A5RlWitOmlzOgNGt2WssdFiE2jRb"
 }

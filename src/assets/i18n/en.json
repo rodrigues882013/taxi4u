@@ -12,7 +12,12 @@
   "LOGIN": {
     "SIGN": "Sign"
   },
-  "APP_NAME": "Carlos Taxi",
+  "APP_NAME": "cTaxi4u",
   "MENU": "menu",
-  "REGISTER": "Register"
+  "REGISTER": "Register",
+  "CHANGE_ADDRESS": "Fix position",
+  "FIX_POSITION": "Fix Position",
+  "ASK_POSITION": "Do you like fix your position or edit your localization?",
+  "BTN_FIX": "Fix",
+  "BTN_EDIT": "Edit"
 }

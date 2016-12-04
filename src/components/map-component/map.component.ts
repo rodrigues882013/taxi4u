@@ -15,6 +15,7 @@ declare var google;
   selector: 'map-component',
   templateUrl: 'map.component.html'
 })
+
 export class MapComponent implements OnInit {
 
   // Method declaration

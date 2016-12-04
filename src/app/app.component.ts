@@ -8,6 +8,8 @@ import { TranslateService } from 'ng2-translate';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
+import { EditPositionPage } from '../pages/edit-position/edit-position';
+
 
 @Component({
   templateUrl: 'app.html'
