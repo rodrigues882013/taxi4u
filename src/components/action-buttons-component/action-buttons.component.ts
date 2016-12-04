@@ -71,6 +71,12 @@ export class ActionButtonsComponent {
   fixPosition(){
     
     this.locationService.getPlace().subscribe( res => {
+      let address = {};
+      address['street'] = res.address.road;
+      address['city'] = res.address.city;
+      address['town'] = res.address.suburb;
+      
+      this.locationService.storageCurrentPlace(address);
       this.fixedPosition.emit({value: true});   
     });
   }

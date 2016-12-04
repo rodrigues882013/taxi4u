@@ -16,6 +16,7 @@ import { EditPositionPage } from '../pages/edit-position/edit-position';
 
 //Components
 import { FormComponent } from "../components/form-component/form.component";
+import { AddressFormComponent } from "../components/address-form-component/address-form.component";
 import { LoginFormComponent } from "../components/login-form-component/login-form.component";
 import { HeaderComponent } from "../components/header-component/header.component";
 import { ContentComponent } from "../components/content-component/content.component";
@@ -59,6 +60,7 @@ export function createTranslateLoader(http: Http) {
     RegisterPage,
     EditPositionPage,
     FormComponent,
+    AddressFormComponent,
     LoginFormComponent,
     HeaderComponent,
     ContentComponent,

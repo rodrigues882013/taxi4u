@@ -9,6 +9,14 @@
     "PASSWORD": "Password",
     "CONFIRM_PASSWORD": "Confirma your password"
   },
+  "FORM_ADDRESS": {
+    "STREET": "Street",
+    "OBSERVATIONS": "Observations",
+    "FIX_POSITION": "Fix this position",
+    "CITY": "City",
+    "TOWN": "Town",
+    "NUMBER": "Number"
+  },
   "LOGIN": {
     "SIGN": "Sign"
   },

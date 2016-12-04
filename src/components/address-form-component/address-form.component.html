@@ -1,0 +1,39 @@
+
+  <div class="row">
+
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s8">
+          <input id="street" type="text" class="validate">
+          <label for="street">{{ 'FORM_ADDRESS.STREET' | translate }}</label>
+        </div>
+
+        <div class="input-field col s4">
+          <input id="number" type="number" class="validate">
+          <label for="number">Last Name</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input type="text" class="validate">
+          <label for="town">{{ 'FORM_ADDRESS.TOWN' | translate }}</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="city" type="text" class="validate">
+          <label for="password">{{ 'FORM_ADDRESS.CITY' | translate }}</label>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col s12">
+          <button class="btn-height-lg" ion-button full (click)="onFixPosition()">
+            {{ 'FORM_ADDRESS.FIX_POSITION' | translate }}
+          </button>
+        </div>
+      </div>
+    </form>
+    
+  </div>
+  
