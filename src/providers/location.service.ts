@@ -25,7 +25,7 @@ export class LocationService {
 
   static positionChange = new EventEmitter<[number, number]>();
   static errorAddress = new EventEmitter<String>();
-  
+
   constructor(private http: Http, private stringService: StringService) {
 
     stringService
@@ -47,7 +47,7 @@ export class LocationService {
           console.log('Error getting location', error);
       });
 
-    
+
     // Watcher every change in position
     Geolocation.watchPosition()
       .subscribe((position: Geoposition) => {
@@ -74,21 +74,21 @@ export class LocationService {
     params.set('format', 'json');
 
     return this.http.get(url, {search: params})
-                    .map( res => res.json())  
+                    .map( res => res.json())
   }
 
   emitErrorInAddress(errMsg: string){
     LocationService.errorAddress.emit(errMsg)
   }
 
-  storageCurrentPlace(address): boolean{
+  storageCurrentPlace(address): boolean {
+    console.log(address)
+    if (_.isUndefined(address.street)) return false;
+    if (_.isUndefined(address.town)) return false;
+    if (_.isUndefined(address.city)) return false;
 
-    if (_.isUndefined(address.street)) return false; 
-    if (_.isUndefined(address.town)) return false; 
-    if (_.isUndefined(address.city)) return false; 
-    
     window.localStorage.setItem("currentAddres", JSON.stringify(address))
     return true;
-  
+
   }
 }

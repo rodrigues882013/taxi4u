@@ -4,36 +4,35 @@
     <form class="col s12">
       <div class="row">
         <div class="input-field col s8">
-          <input id="street" type="text" class="validate">
+          <input id="street" type="text" class="validate" [(ngModel)]="address.street" name="street">
           <label for="street">{{ 'FORM_ADDRESS.STREET' | translate }}</label>
         </div>
 
         <div class="input-field col s4">
-          <input id="number" type="number" class="validate">
-          <label for="number">Last Name</label>
+          <input id="_number" type="number" class="validate" [(ngModel)]="address._number" name="_number">
+          <label for="_number">{{ 'FORM_ADDRESS.NUMBER' | translate }}</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input type="text" class="validate">
+          <input id="town" type="text" class="validate" [(ngModel)]="address.town" name="town">
           <label for="town">{{ 'FORM_ADDRESS.TOWN' | translate }}</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input id="city" type="text" class="validate">
-          <label for="password">{{ 'FORM_ADDRESS.CITY' | translate }}</label>
+          <input id="city" type="text" class="validate" [(ngModel)]="address.city" name="city">
+          <label for="city">{{ 'FORM_ADDRESS.CITY' | translate }}</label>
         </div>
       </div>
-      
+
       <div class="row">
         <div class="col s12">
-          <button class="btn-height-lg" ion-button full (click)="onFixPosition()">
+          <button type="button" class="btn-height-lg" ion-button full (click)="onFixPosition()">
             {{ 'FORM_ADDRESS.FIX_POSITION' | translate }}
           </button>
         </div>
       </div>
     </form>
-    
+
   </div>
-  

@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
-
+import { NavController, App, ViewController } from 'ionic-angular';
 import { TranslateService } from 'ng2-translate';
+
+import { HomePage } from '../home/home';
+
 
 
 
@@ -12,10 +14,22 @@ import { TranslateService } from 'ng2-translate';
 })
 export class EditPositionPage {
 
-  constructor(public navCtrl: NavController) {}
+  public fixed: boolean;
+
+  constructor(public navCtrl: NavController,
+              public appCtrl: App,
+              public viewCtrl: ViewController) {}
 
   ionViewDidLoad() {
     console.log('Hello EditPositionPage Page');
+  }
+
+  fixedPosition(event){
+    console.log(event)
+    if (event.fixed) {
+      this.viewCtrl.dismiss();
+      this.appCtrl.getRootNav().push(HomePage);
+    }
   }
 
 }
